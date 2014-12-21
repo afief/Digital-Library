@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Library 2.0</title>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    
+	<link rel="stylesheet" href="css/jquery.mobile.flatui.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+    <script type="application/javascript" src="js/consoler.js"></script>
+	<script type="application/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="application/javascript" src="js/jquery.mobile-1.4.3.min.js"></script>
+	<script type="application/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+<div class="container" id="container">
+	<div data-role="page" class="home_page" id="home" data-theme="f">
+        <div class="mainbg">
+            <div class="kiriatas"></div>
+            <div class="kananbawah"></div>
+        </div>        
+		<div role="main">
+			<h1></h1>
+			<div class="logo">
+				<img src="images/logo_app.png">
+			</div>
+			<a href="#stream" data-icon="flat-checkround" data-role="button">Koleksi Buku</a>
+			<a href="#contact" data-icon="flat-man" data-role="button">Hubungi Kami</a>
+            <br>
+            
+            <a href="#admin_panel" data-icon="flat-lock" data-role="button">Administrator</a>
+            
+		</div>
+	</div>
+
+	<div data-role="page" class="stream_page" id="stream" data-theme="f">
+		<div data-role="header">
+			<a href="#home" data-icon="arrow-l" data-iconpos="notext">Back</a>
+			<h2>Koleksi Buku</h2>
+		</div>
+		<div role="main">
+            <ul data-role="listview" data-inset="true" id="booklist">
+            </ul>
+        </div>
+	</div>
+
+	<div data-role="page" class="book_page" id="book" data-theme="f">
+		<div data-role="header">
+            <a href="#stream" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+            <h2 class="book_title"></h2>
+        </div>
+        <div role="main">
+            <div class="ui-body">
+
+                <label>Judul</label>
+                <div class="atribut book_title">&nbsp;</div>
+
+                <label>Edisi</label>
+                <div class="atribut book_edition">&nbsp;</div>
+
+                <label>Judul Seri</label>
+                <div class="atribut book_series">&nbsp;</div>
+
+                <label>Penerbit</label>
+                <div class="atribut book_publisher">&nbsp;</div>
+
+                <label>Tahun Terbit</label>
+                <div class="atribut book_publishyear">&nbsp;</div>
+
+                <label>Tempat Terbit</label>
+                <div class="atribut book_publishplace">&nbsp;</div>
+
+                <label>ISBN</label>
+                <div class="atribut book_isbn">&nbsp;</div>
+            </div>
+        </div>
+	</div>
+
+    <div data-role="page" class="login" id="login" data-theme="d">
+        <div data-role="header">
+            <a href="#home" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+            <h2>Login</h2>
+        </div>
+        <div role="main">
+            <form id="loginform" onsubmit="return false">
+                <div class="ui-field-contain">
+                    <label for="login_username">Username</label>
+                    <input type="text" name="username" id="login_username">
+
+                    <label for="login_password">Password</label>
+                    <input type="password" name="password" id="login_password">
+
+                    <button id="login_login">Login</button>
+                    <br>
+                    <a href="#lupa_password">Lupa Password</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div data-role="page" class="add_book" id="add_book" data-theme="d">
+        <div data-role="header">
+            <a href="#admin_panel" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+            <h2>Tambah Buku</h2>
+        </div>
+        <div role="main">
+            <form id="tambahform" onsubmit="return false">
+                <div class="ui-field-contain">
+                    
+                    <label for="tambah_image">Thumbnail Buku</label>
+                    <input type="file" id="tambah_image" name="tambah_image">
+                    
+                    <label for="tambah_judul">Judul</label>
+                    <input type="text" id="tambah_judul" name="tambah_judul">
+                    
+                    <label for="tambah_keterangan">Keterangan / Sinopsis</label>
+                    <textarea name="tambah_keterangan" id="tambah_keterangan" cols="30" rows="10"></textarea>
+                    
+                    <label for="tambah_penerbit">Penerbit</label>
+                    <input type="text" name="tambah_penerbit" id="tambah_penerbit">
+                    
+                    <label for="tambah_kota">Kota</label>
+                    <input type="text" name="tambah_kota" id="tambah_kota">
+                    
+                    <label for="tambah_edisi">Edisi</label>
+                    <input type="text" id="tambah_edisi" name="tambah_edisi">
+                    
+                    <label for="tambah_tahun">Tahun Terbit</label>
+                    <input type="text" id="tambah_tahun" name="tambah_tahun">
+                    
+                    <label for="tambah_bahasa">Bahasa</label>
+                    <select name="tambah_bahasa" id="tambah_bahasa" data-theme="e">
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="en">Bahasa Inggris</option>
+                    </select>
+                    
+                    <label for="tambah_isbn">ISBN</label>
+                    <input type="text" id="tambah_isbn" name="tambah_isbn">
+                    
+                    <label for="tambah_bentuk">Collation</label>
+                    <input type="text" id="tambah_bentuk" name="tambah_bentuk">
+                    
+                    <button id="tambah_tambah">Tambah Buku</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-role="page" class="add_user" id="add_user" data-theme="d">
+        <div data-role="header">
+            <a href="#admin_panel" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+            <h2>Tambah Pengguna Baru</h2>
+        </div>
+        <div role="main">
+            <form id="userform" action="#" method="POST">
+                <div class="ui-field-contain">                    
+                    <label for="user_nama">Nama</label>
+                    <input type="text" id="user_nama" name="user_nama" placeholder="Nama Lengkap" required>
+
+                    <label for="user_email">Email</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="Email" required>
+
+                    <br>
+
+                    <label for="user_name">Username</label>
+                    <input type="text" id="user_name" name="user_name" placeholder="Digunakan Untuk Login" required>
+
+                    <label for="user_password">Password</label>
+                    <input type="password" id="user_password" name="user_password" placeholder="Password" required>
+
+                    <button id="tambah_user">Tambah User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div data-role="page" class="admin_panel" id="admin_panel" data-theme="d">
+        <div data-role="header">
+            <a href="#home" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+            <h2>Administrator Panel</h2>
+        </div>
+        <div role="main">
+            <a href="#add_book" data-icon="flat-new" data-role="button">Tambah Buku Baru</a>
+            <a href="#add_user" data-icon="flat-man" data-role="button">Tambah Pengguna Baru</a>
+            <br>
+            <a href="#logout" data-icon="home" data-role="button">Keluar</a>
+        </div>
+    </div>
+    <div data-role="page" class="logout" id="logout" data-theme="d">
+    </div>
+
+	<div data-role="page" class="contact_page" id="contact" data-theme="f">
+        <div data-role="header">
+            <a href="#home" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+            <h2>Contact</h2>
+        </div>
+        <div role="main">
+        		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1980.6220579763565!2d107.59293803086369!3d-6.8613200560743834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee36226510a79e76!2sIndonesia+University+of+Education!5e0!3m2!1sen!2sid!4v1409615782089" width="100%" height="300" frameborder="0" style="border:0">
+                </iframe>
+                <br>
+                <p><b>Jl. Dr. Setiabudhi No. 229 Bandung 40154 Jawa Barat - Indonesia</b><br>
+                    Telp. +62-22-2013161-2013162-2013163-2013164<br>
+                    Fax. +62-22-2013651</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
